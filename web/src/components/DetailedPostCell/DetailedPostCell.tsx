@@ -21,5 +21,16 @@ export const Failure = ({ error }: CellFailureProps<FindPostById>) => (
 )
 
 export const Success = ({ post }: CellSuccessProps<FindPostById>) => {
-  return <div>{JSON.stringify(post)}</div>
+  const { id, title, body, slug } = post
+  return (
+    <div>
+      <ul>
+        <li>{id}</li>
+        <li>{title}</li>
+        <li>{body}</li>
+        <li>{slug}</li>
+        <li></li>
+      </ul>
+    </div>
+  )
 }

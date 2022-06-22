@@ -6,14 +6,15 @@ interface Props {
 }
 
 const DetailedPostPage = ({ id }: Props) => {
-  console.log(typeof id)
   return (
     <>
       <MetaTags title="DetailedPost" description="DetailedPost page" />
 
-      <h1>DetailedPostPage</h1>
+      <main>
+        <h1>DetailedPostPage</h1>
 
-      <DetailedPostCell id={id} />
+        <DetailedPostCell id={id} />
+      </main>
     </>
   )
 }
