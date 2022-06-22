@@ -6,6 +6,7 @@ interface Props {
 }
 
 const DetailedPostPage = ({ id }: Props) => {
+  console.log(typeof id)
   return (
     <>
       <MetaTags title="DetailedPost" description="DetailedPost page" />
