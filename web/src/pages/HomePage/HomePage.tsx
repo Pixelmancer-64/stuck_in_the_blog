@@ -5,7 +5,8 @@ import PostsCell from 'src/components/PostsCell'
 const Container = styled.main`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin: 3vh 3vw;
+  padding: 3vh 3vw;
+  background-color: #0e141b;
 `
 const Posts = styled.div``
 const Featured = styled.div`

@@ -7,19 +7,40 @@ const Container = styled.div`
   display: flex;
   min-height: 100%;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 4vh;
 `
 
 const Post = styled.div`
-  border: 2px solid black;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+
+  a {
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &:hover {
+    h3 {
+      color: #d5043c;
+    }
+  }
 `
 
+const Title = styled.h3`
+  font-size: 1.3rem;
+  font-weight: 600;
+`
+const ReadMore = styled.span`
+  font-weight: 600;
+`
 export const QUERY = gql`
   query PostsQuery {
     posts {
       id
       title
-      author
+      body
     }
   }
 `
@@ -35,12 +56,13 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({ posts }: CellSuccessProps<PostsQuery>) => {
   return (
     <Container>
-      {posts.map(({ id, title, author }) => {
+      {posts.map(({ id, title, body }) => {
         return (
           <Post key={id}>
             <Link to={routes.detailedPost({ id: id })}>
-              <h2>{title}</h2>
-              <span>{author}</span>
+              <Title>{title}</Title>
+              <span>{body}</span>
+              <ReadMore>Read More</ReadMore>
             </Link>
           </Post>
         )

@@ -14,6 +14,13 @@ const Header = styled.header`
   margin: 0 auto;
   padding: 0 2rem;
   justify-content: space-between;
+  padding: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  & a {
+    color: inherit;
+  }
 `
 const LogoWrapper = styled.div``
 
@@ -21,27 +28,31 @@ const Navbar = styled.nav`
   flex-grow: 1;
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 `
-const Controls = styled.div`
-  flex-grow: 1;
+// const Controls = styled.div`
+//   flex-grow: 1;
 
-  ul {
-    display: flex;
-    justify-content: space-around;
-  }
-`
+//   ul {
+//     display: flex;
+//     justify-content: space-around;
+//   }
+// `
 
 const Footer = styled.footer`
   display: grid;
   grid-template-columns: 1fr 2fr;
 `
 const RandomLinks = styled.div`
-  background-color: red;
+  display: flex;
+  justify-content: center;
 `
-const Ps = styled.div`
-  background-color: purple;
+const Ps = styled.div``
+const SocialMediaIcon = styled.a`
+  img {
+    width: 4rem;
+  }
 `
 
 const BlogLayout = ({ children }: BlogLayoutProps) => {
@@ -66,7 +77,7 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
           </ul>
         </Navbar>
 
-        <Controls>
+        {/* <Controls>
           <ul>
             <li>
               <button>HI</button>
@@ -78,12 +89,22 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
               <button>HI</button>
             </li>
           </ul>
-        </Controls>
+        </Controls> */}
       </Header>
       {children}
       <Footer>
         <Ps>Ps</Ps>
-        <RandomLinks>RandomLinks</RandomLinks>
+        <RandomLinks>
+          <SocialMediaIcon href="/">
+            <img src="/favicon.png" alt="github icon" />
+          </SocialMediaIcon>
+          <SocialMediaIcon href="/">
+            <img src="/favicon.png" alt="instagram icon" />
+          </SocialMediaIcon>
+          <SocialMediaIcon href="/">
+            <img src="/favicon.png" alt="personal website icon" />
+          </SocialMediaIcon>
+        </RandomLinks>
       </Footer>
     </>
   )
